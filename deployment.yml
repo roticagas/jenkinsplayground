@@ -1,0 +1,28 @@
+# new folder
+type: application-new-folder 
+destination_file_name: /usr/home/abc/cicd
+destination_server_name: ABC-DEF-123
+---
+## source_file_name will be path inside /repository/Corp_SMS_Apps/test/1-0-112/CORPSMSAPPS/CORPSMSAPPS-.zip
+type: artifact-deployment
+jenkins_build_number: 1-0-176
+source_file_name: output/APIA.ear
+destination_file_name: /usr/home/abc/cicd/APIA.ear
+destination_server_name: ABC-DEF-123
+destination_server_cluster: abc
+
+---
+## config-deployment : the file is existed on the destination path
+## source_file_name is path relative to this file.
+type: config-deployment
+source_file_name: conf/test-backup.properties
+destination_file_name: /usr/home/abc/cicd/test-backup.properties
+destination_server_name: ABC-DEF-123
+
+---
+## config-deployment : the file is new file on the destination path
+## source_file_name is path relative to this file.
+type: config-deployment
+source_file_name: conf/test-file.txt
+destination_file_name: /usr/home/abc/cicd/test-file.txt
+destination_server_name: ABC-DEF-123
